@@ -1,4 +1,4 @@
-from markov import mk_pairs
+from markov import mk_pairs, mk_db
 
 
 def test_mk_pairs_null():
@@ -35,3 +35,10 @@ def test_mk_pairs_i_dont_believe():
     result = mk_pairs(words)
 
     assert e1 in result and e2 in result
+
+
+#############################################################
+def tes_mk_db_empty():
+    pairs = []
+
+    assert mk_db(pairs) == {}

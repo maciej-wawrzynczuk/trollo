@@ -4,3 +4,7 @@ def mk_pairs(words):
         for count in range(len(words) - 1):
             yield words[count], words[count+1]
         yield words[-1], None
+
+
+def mk_db(pairs):
+    return {}
