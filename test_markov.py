@@ -49,3 +49,17 @@ def test_db_add_to_empty():
                  [1])
     }
     assert db.db == excepted
+
+
+def test_dv_add_all_different():
+    db = DB()
+
+    db.add_pair(('spam', 'eggs'))
+    db.add_pair(('bacon', 'ham'))
+
+    expected = {
+        'spam': (['eggs'], [1]),
+        'bacon': (['ham'], [1])
+    }
+
+    assert db.db == expected
