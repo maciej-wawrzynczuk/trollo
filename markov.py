@@ -6,5 +6,9 @@ def mk_pairs(words):
         yield words[-1], None
 
 
-def mk_db(pairs):
-    return {}
+class DB:
+    def __init__(self):
+        self.db = {}
+
+    def add_pair(self, pair):
+        self.db[pair[0]] = ([pair[1]], [1])

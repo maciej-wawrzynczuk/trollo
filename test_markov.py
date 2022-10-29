@@ -1,4 +1,4 @@
-from markov import mk_pairs, mk_db
+from markov import mk_pairs, DB
 
 
 def test_mk_pairs_null():
@@ -38,7 +38,14 @@ def test_mk_pairs_i_dont_believe():
 
 
 #############################################################
-def tes_mk_db_empty():
-    pairs = []
 
-    assert mk_db(pairs) == {}
+def test_db_add_to_empty():
+    db = DB()
+
+    db.add_pair(('spam', 'eggs'))
+
+    excepted = {
+        'spam': (['eggs'],
+                 [1])
+    }
+    assert db.db == excepted
