@@ -25,3 +25,13 @@ def test_mk_pairs_pair():
     expected = ('spam', 'eggs')
 
     assert expected in mk_pairs(words)
+
+
+def test_mk_pairs_i_dont_believe():
+    words = ['bacon', 'eggs', 'spam']
+    e1 = ('bacon', 'eggs')
+    e2 = ('eggs', 'spam')
+
+    result = mk_pairs(words)
+
+    assert e1 in result and e2 in result
